@@ -14,16 +14,18 @@ app.get("/:dateString", function(req,res){
     // res.send(req.params.dateString);
     let date = req.params.dateString;
     if (! isNaN(date)) {
-        date = Number(date);
+        date = Number(date*1000);
     }
     const possibleDate = new Date(date);
-    console.log(possibleDate);
+    const locale = "en-us";
+
     if (possibleDate=="Invalid Date") {
         return res.send("Invalid Date");
     }
+    // console.log(possibleDate.toLocaleString(locale, {month: "long"}) , possibleDate.getDate() , possibleDate.getFullYear());
     const dateObject = {
-        "unix": Math.round(possibleDate.getTime()),
-        "Date": possibleDate.toString()
+        "unix": Math.round(possibleDate.getTime()/1000),
+        "natural": possibleDate.toLocaleString(locale, { month: "long" }) + " " + possibleDate.getDate() + " , " + possibleDate.getFullYear()
     }
     res.send(JSON.stringify(dateObject));
 });
