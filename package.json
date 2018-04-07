@@ -1,0 +1,23 @@
+{
+  "name": "timestamp-microservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivam123425/Timestamp-Microservice.git"
+  },
+  "author": "Shivam Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shivam123425/Timestamp-Microservice/issues"
+  },
+  "homepage": "https://github.com/shivam123425/Timestamp-Microservice#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  }
+}
